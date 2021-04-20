@@ -2,6 +2,9 @@ package com.interfacesAndAbstractClasses;
 
 // Interfaces are just like class but it hides the implementation of methods.
 // these are used to achieve multiple inheritance
+//Interface doesn't contain Method implementation and by default all methods are abstract in nature.
+// we can use default methods as to provide method body.
+// by default member variables are final of an interface so it must be initialized.
 interface Mobile{
     void RAM();
     void ROM();

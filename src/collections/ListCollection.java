@@ -2,6 +2,7 @@ package collections;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 class Student{
     int roll;
@@ -19,7 +20,7 @@ public class ListCollection {
         // Java collection framework provide many interfaces and classes.
         // We can perform various operations on the data like searching, sorting, insertion, deletion etc dynamically.
 
-        //List : Java List is an interface that extends the Collection and store the elements in the index approach
+        //List : Java List is an interface that extends the Collection interface and store the elements in the index approach
         // even it contains duplicate elements.
         // ArrayList,LinkedList and Vector are the classes that implements the List interface.
         //ArrayList : It is collection class that implements List interface
@@ -27,11 +28,11 @@ public class ListCollection {
         // the size of list is increased dynamically
 
         // this list only store String object
-        ArrayList<String> arrayList = new ArrayList<>();
+        // List is an interface which is implemented by ArrayList class
+        List<String> arrayList = new ArrayList<>();//Generic collections
 
         // this list store any type of data
-        ArrayList arrayList1 = new ArrayList();//Generic collections
-
+        ArrayList arrayList1 = new ArrayList();
         // adding data to list
         arrayList.add("Golu");
         arrayList.add("Nikhil");

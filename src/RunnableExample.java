@@ -7,7 +7,7 @@ public class RunnableExample {
         //runnableThread.run();
 
         Runnable runnable = new RunnableThread();
-        new Thread(runnable).start();
+        new Thread(runnable).start(); 
     }
 }
 

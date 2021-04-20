@@ -29,6 +29,7 @@ public class LambdaExpression {
         uber.ride("Jaipur","Patna");
 
         // 3. using Lambda expression
+        // for lambda expression the interface must be functional interface.
         Uber ub = (source,destination)->{
             System.out.println("Riding from "+source+ " to "+ destination);
         };
