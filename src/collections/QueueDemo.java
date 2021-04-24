@@ -1,12 +1,14 @@
 package collections;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class QueueDemo {
     public static void main(String[] args) {
         // Queue : Queue is a data structure that works on FIFO concepts i.e. FIRST IN FIRST OUT
         // It has two sides first one is Front for deletion and second Rear for Insertion
 
-        PriorityQueue<Integer> pQueue = new PriorityQueue<>();
+        Queue<Integer> pQueue = new PriorityQueue<>();
 
         for (int i = 10; i > 0; i--) {
             pQueue.add(i);

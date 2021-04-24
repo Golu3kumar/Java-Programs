@@ -41,7 +41,7 @@ class Student {
 }
 
 public class StaticDemo {
-    // even main method is also static as it call without creating object of this class.
+    // even main method is also static as it called without creating object of this class.
     //if you remove static keyword, then welcome to the DeadLock Arena!
     public static void main(String[] args) {
         Student nikhil = new Student();

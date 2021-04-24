@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Hashmap {
     public static void main(String[] args) {
-        //HashMap : it is a key - value pair, which takes boxing classes as an Parameter i.e. Integer,Float,Double
+        //HashMap : it is a key - value pair, which takes wrapper classes as an Parameter i.e. Integer,Float,Double
         // Initializing HashMap
         HashMap<String,String> stateCapitalPair = new HashMap<>(){
             {
@@ -23,6 +23,7 @@ public class Hashmap {
         gfName.put("Dk","Neha");
         gfName.put("Jp","Samiksha");
         gfName.put("Pk","Nidhi");
+
 
         JFrame frame = new JFrame();
         String name = JOptionPane.showInputDialog(frame,"Enter Your Name");

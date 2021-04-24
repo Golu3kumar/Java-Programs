@@ -1,0 +1,19 @@
+Hello Everyone,
+Hope you all are safe at Home! and playing with laptops(Not game!).
+//Let's start
+
+//So what is Design Pattern ?
+Let suppose you want to build a software, what you gonna do for this?
+You start learning Programming Language(eg. Java, Python etc.) for a couple of weak,
+then you start building your software. But hold on building software is not easy like that.
+// There are certain procedure you have to follow.
+// There are too many problems you gonna face while building a software.
+// Might be the problem you faced, also faced by other people.
+// So to tackle these common problems some genius people build solutions to the problems.
+// These are called Design Patterns.
+// Design Pattern : Design patterns are the solution to the common problems.
+// These are three types :
+1. Creational Pattern = Factory Pattern, Builder Pattern
+2. Structural Pattern
+3. Behavioral Pattern
+

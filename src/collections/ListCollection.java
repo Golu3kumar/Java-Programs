@@ -41,6 +41,7 @@ public class ListCollection {
         arrayList.add("Teekam");
         arrayList.add("Dk");
         arrayList.add("Pk");
+
         //arrayList.add(9); arrayList can store only String object
         Student student = new Student(43,"Golu");
 

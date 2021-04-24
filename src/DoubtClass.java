@@ -8,10 +8,23 @@ public class DoubtClass {
     static int a = 5;
     public static void main(String[] args) {
         A a = new A();
-        System.out.println(a.b+a.a);
+        //System.out.println(a.b+a.a);
         int d;
-        //System.out.println(d); //Error d must be initialized
-        System.out.println(DoubtClass.a);
+        //System.out.println(d); //Error : d must be initialized
+        //System.out.println(DoubtClass.a);
+
+        int[] a1 = new int[]{4,3,2,5};
+        int[] a2 = new int[9];
+
+        //a2 = a1;
+
+        System.out.println(a1.length);
+        System.out.println(a2.length);
+
+        for (int e:a2) {
+            System.out.println(e);
+        }
+
 
 
     }

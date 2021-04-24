@@ -17,7 +17,7 @@ class Teacher implements Comparable<Teacher> {
 
     @Override
     public int compareTo(Teacher o) {
-        return teachingHours<o.teachingHours?1:-1;
+        return id>o.id?1:-1;
     }
 
 
@@ -49,13 +49,15 @@ public class ComparableInterfaceDemo {
 
         Collections.sort(teacherList);
 
-//        System.out.println("After Sorting on the basis of Id : ");
-//        for (Teacher teacher : teacherList) {
-//            System.out.println(teacher);
-//        }
+        System.out.println("After Sorting on the basis of Id : ");
+        for (Teacher teacher : teacherList) {
+            System.out.println(teacher);
+        }
 
         System.out.println("After Sorting on the basis of Teaching Hour : ");
-        // maximum no. of hour
+        // we can't change the class file so that we have to pass comparator
+        // lambda expression to the Collection class
+        Collections.sort(teacherList,(obj1,obj2)->obj1.teachingHours>obj2.teachingHours?1:-1);
         for (Teacher teacher : teacherList) {
             System.out.println(teacher);
         }
