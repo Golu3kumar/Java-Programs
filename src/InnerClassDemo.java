@@ -33,7 +33,7 @@ public class InnerClassDemo {
 
         // to create inner class object we have to follow this approach
         // this approach is for Non - Static class.
-        //OuterClassName.InnerClassName = OuterClassObject.new InnerClassName();
+        //OuterClassName.InnerClassName reference = OuterClassObject.new InnerClassName();
         //OuterClass.InnerClass innerClass = out.new InnerClass();
 
         //for static class :

@@ -13,6 +13,11 @@ public class OneDArray {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
         }
+
+        int[] array,arr1;
+
+        arr1 = new int[]{222,2,};
+
         System.out.println();
         arr[4] = 88;
         System.out.println(arr[4]);

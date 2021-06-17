@@ -17,6 +17,7 @@ class Array<T> {
         if (capacity < 0) throw new IllegalArgumentException("Illegal Capacity = " + capacity);
         this.capacity = capacity;
         arr = (T[]) new Object[capacity];
+        len = capacity;
     }
 
     // method to get the size of array
@@ -123,7 +124,7 @@ public class DynamicArrayDemo {
 
         // this is the object of my array class
         //Cool....
-        Array array = new Array(5);
+        Array<Integer> array = new Array<>(5);
 
         System.out.println("Size of array : "+array.size());
 
@@ -131,6 +132,11 @@ public class DynamicArrayDemo {
 
         System.out.println("data : "+array.get(2));
 
+        System.out.println(array.size());
+
+        System.out.println(array.toString());
+
+        array.add(4);
         System.out.println(array.size());
 
     }

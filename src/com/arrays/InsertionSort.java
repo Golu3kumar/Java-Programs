@@ -10,6 +10,7 @@ public class InsertionSort {
                     temp = input[j];
                     input[j] = input[j-1];
                     input[j-1] = temp;
+
                 }
             }
         }

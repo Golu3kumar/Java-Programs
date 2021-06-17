@@ -33,14 +33,17 @@ public class ListCollection {
 
         // this list store any type of data
         ArrayList arrayList1 = new ArrayList();
-        // adding data to list
+
+         //adding data to list
         arrayList.add("Golu");
         arrayList.add("Nikhil");
         arrayList.add("Jai Prakash");
         arrayList.add("Samrat");
         arrayList.add("Teekam");
+        arrayList.add("Samrat");
         arrayList.add("Dk");
         arrayList.add("Pk");
+        arrayList.add("Teekam");
 
         //arrayList.add(9); arrayList can store only String object
         Student student = new Student(43,"Golu");
