@@ -8,6 +8,7 @@ public class StackDemo {
     private int top = -1;
     private static int counter;
     private String[] text = new String[MAX_SIZE];
+    private Scanner sc = new Scanner(System.in);
 
     public boolean isEmpty() {
         return top == -1;
@@ -48,7 +49,6 @@ public class StackDemo {
             System.out.println("Stack Overflow!");
             return;
         }
-        Scanner sc = new Scanner(System.in);
         System.out.print(":>");
         String newText = sc.nextLine();
         text[++top] = newText;

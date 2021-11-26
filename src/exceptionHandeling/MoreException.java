@@ -1,5 +1,7 @@
 package exceptionHandeling;
 
+import lib.Library;
+
 public class MoreException {
 
     void divideByZero(int a,int b) throws ArithmeticException{
@@ -18,5 +20,10 @@ public class MoreException {
         finally {//it executes always whether the exception is handled or not
             System.out.println("Exception occur is handled");
         }
+
+        System.out.println("after error!");
+
+        Library lib = new Library();
+        System.out.println(lib.getFact(5));
     }
 }

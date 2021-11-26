@@ -3,7 +3,9 @@ package data_structure.challenges;
 
 import java.util.EmptyStackException;
 
+
 public class StackUsingLinkedList {
+
 
     private ListNode top;
     private int length;
@@ -58,6 +60,9 @@ public class StackUsingLinkedList {
         return top.data;
     }
 
+    public int getLength(){
+        return length;
+    }
     public static void main(String[] args) {
 
         StackUsingLinkedList sll = new StackUsingLinkedList();

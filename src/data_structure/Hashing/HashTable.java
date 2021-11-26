@@ -1,6 +1,5 @@
 package data_structure.Hashing;
 
-import java.util.List;
 
 public class HashTable {
     private final HashNode[] bucket;

@@ -9,8 +9,10 @@ public class PlacementService {
     public Employee process(Student student) throws IOException {
 
         if (student.getMarks()>70){
-            employeeService.saveEmployee(EmployeeAdapter.getEmployee(student));
-            return EmployeeAdapter.getEmployee(student);
+            // here EmployeeAdapter class convert Student into Employee.
+            Employee newEmp = EmployeeAdapter.getEmployee(student);
+            employeeService.saveEmployee(newEmp);
+            return newEmp;
         }
         return null;
     }

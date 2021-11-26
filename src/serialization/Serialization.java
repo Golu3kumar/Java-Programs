@@ -9,7 +9,8 @@ import java.io.ObjectOutputStream;
 public class Serialization {
     public static void main(String[] args) throws Exception{
         CricketCurrentScore cricketCurrentScore = new CricketCurrentScore(200,19,5);
-
+        // here we set value to transient variable
+        cricketCurrentScore.setTargetRun(210);
         // it is a class which is used to write byte or character stream into a file
         FileOutputStream fos = new FileOutputStream("cricket_current_score.txt");
         // it is a class which can write an object into the file

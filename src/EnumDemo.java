@@ -15,7 +15,7 @@ enum Size {
     SMALL("Pizza size is small"),
     MEDIUM("Pizza size is Medium"),
     LARGE("Pizza size is Large"),
-    EXTRALARGE("Pizza size is too large");
+    EXTRA_LARGE("Pizza size is too large");
 
     private final String pizzaSize;
     Size(String pizzaSize){
@@ -56,12 +56,12 @@ public class EnumDemo {
 
         // accessing constants
         Day day = Day.MONDAY;
-        System.out.println(day); // MONDAY
+        System.out.println(day.name()); // MONDAY
 
         String str = "MONDAY";
         new EnumDemo(Day.valueOf(str)).checkMood();
 
-        Size size = Size.EXTRALARGE;
+        Size size = Size.EXTRA_LARGE;
 
         System.out.println(size.getSize());
         size = Size.MEDIUM;

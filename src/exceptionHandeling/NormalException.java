@@ -13,11 +13,19 @@ public class NormalException {
             System.out.println(e.getLocalizedMessage());
         }
 
+
+        System.out.println("After error occurred");
+
         try {
             int num = Integer.parseInt("Hello");
             System.out.println(num);
         } catch (NumberFormatException e) {
+            //e.printStackTrace();
             System.out.println("An exception occur : " + e.getLocalizedMessage());
         }
+
+
+        System.out.println("Hello");
+        System.out.println("I am still here");
     }
 }

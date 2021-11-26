@@ -15,10 +15,15 @@ public class Deserialization {
 
         CricketCurrentScore score = (CricketCurrentScore) ois.readObject();
 
+        // you should must close the stream classes
+        fis.close();
+        ois.close();
         System.out.println("Team India current score : ");
-        System.out.println("Score : "+score.currentRuns);
-        System.out.println("Wickets : "+score.currentWickets);
-        System.out.println("Over : "+score.currentOvers);
+        System.out.println("Score : "+score.getCurrentRuns());
+        System.out.println("Wickets : "+score.getCurrentWickets());
+        System.out.println("Over : "+score.getCurrentOvers());
+        // when we print transient variable we didn't get value whatever we saved
+        System.out.println("Target run : "+score.getTargetRun());
 
         System.out.println("Deserialization is completed...");
     }

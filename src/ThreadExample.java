@@ -28,7 +28,7 @@ class SecondThread extends Thread {
 
     @Override
     public void run() {
-        pr.print("dk.pdf");
+        pr.print("teekam.pdf");
     }
 }
 

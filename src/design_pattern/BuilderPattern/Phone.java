@@ -1,6 +1,6 @@
 package design_pattern.BuilderPattern;
 
-// this is Phone class that contains some properties of a phone that keep in mind while purchasing.
+// this is Phone POJO class that contains some properties of a phone that keep in mind while purchasing.
 
 public class Phone {
     private String companyName;

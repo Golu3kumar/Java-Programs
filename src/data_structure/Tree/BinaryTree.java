@@ -1,6 +1,9 @@
 package data_structure.Tree;
 
 
+import com.sun.source.tree.Tree;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -12,6 +15,7 @@ import java.util.Stack;
 public class BinaryTree {
 
     public TreeNode root;
+    public int fullNode, halfNode, leafNode;
 
     private static class TreeNode {
         int data;
@@ -126,7 +130,26 @@ public class BinaryTree {
     // Iterative PostOrder Traversal
     // TODO : This function needs to be completed.
     public void iterativePostOrderTraversal() {
+        if (root == null)
+            return;
 
+        Stack<TreeNode> stk = new Stack<>();
+        Stack<TreeNode> postOrder = new Stack<>();
+        stk.push(root);
+        TreeNode temp = null;
+        while (!stk.isEmpty()) {
+            temp = stk.pop();
+            if (temp == null)
+                continue;
+
+            postOrder.push(temp);
+            stk.push(temp.left);
+            stk.push(temp.right);
+        }
+
+        while (!postOrder.isEmpty()) {
+            System.out.print(postOrder.pop().data + " ");
+        }
     }
 
     // Level Traversal with Maximum Element
@@ -250,7 +273,181 @@ public class BinaryTree {
         return 1 + leftCount + rightCount;
     }
 
-    
+    public int maxDepth(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        else {
+            int leftDepth = maxDepth(root.left);
+            int rightDepth = maxDepth(root.right);
+
+            if (leftDepth > rightDepth)
+                return leftDepth + 1;
+            else
+                return rightDepth + 1;
+        }
+    }
+
+    public int numberOFLeaves(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        if (root.left == null && root.right == null)
+            return 1;
+        else
+            return numberOFLeaves(root.left) + numberOFLeaves(root.right);
+    }
+
+    public void countNodeCategory(TreeNode root) {
+        if (root == null)
+            return;
+
+        if (root.left != null && root.right != null)
+            fullNode++;
+        else if (root.left != null || root.right != null) {
+            halfNode++;
+        } else
+            leafNode++;
+        countNodeCategory(root.left);
+        countNodeCategory(root.right);
+    }
+
+    // LCA
+    public TreeNode lowestCommonAncestor(TreeNode root, int node1, int node2) {
+        // A node p is said to be ancestor of q if there exist a path from root to q and p appears on the path.
+        if (root == null) {
+            return null;
+        }
+
+        if (root.data == node1 || root.data == node2)
+            return root;
+
+        TreeNode left = lowestCommonAncestor(root.left, node1, node2);
+        TreeNode right = lowestCommonAncestor(root.right, node1, node2);
+
+        if (left != null && right != null)
+            return root;
+
+        if (left != null)
+            return left;
+        else
+            return right;
+
+    }
+
+
+    public TreeNode getDepthNode(TreeNode root) {
+        TreeNode temp = null;
+        if (root == null) {
+            return null;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            temp = queue.poll();
+            if (temp.left != null) {
+                queue.offer(temp.left);
+            }
+            if (temp.right != null) {
+                queue.offer(temp.right);
+            }
+        }
+        return temp;
+    }
+
+    public void deleteNode(TreeNode root, int data) {
+        // we need to search for that node
+        if (root == null)
+            return;
+
+        Queue<TreeNode> que = new LinkedList<>();
+        que.add(root);
+        TreeNode temp = null, keyNode = null;
+        while (!que.isEmpty()) {
+            temp = que.poll();
+
+            if (temp.data == data) {
+                keyNode = temp;
+            }
+            if (temp.left != null)
+                que.offer(temp.left);
+            if (temp.right != null)
+                que.offer(temp.right);
+        }
+
+        if (keyNode != null) {
+            int keyData = temp.data;
+            deleteLastNode(temp);
+            keyNode.data = keyData;
+        }
+
+
+    }
+
+    void deleteLastNode(TreeNode deletedNode) {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(this.root);
+        TreeNode temp;
+
+        while (!q.isEmpty()) {
+            temp = q.poll();
+
+            if (temp == deletedNode) {
+                temp = null;
+                return;
+            }
+
+            if (temp.left != null) {
+                if (temp.left == deletedNode) {
+                    temp.left = null;
+                    return;
+                } else
+                    q.offer(temp.left);
+            }
+            if (temp.right != null) {
+                if (temp.right == deletedNode) {
+                    temp.right = null;
+                    return;
+                } else
+                    q.offer(temp.right);
+            }
+        }
+
+    }
+
+    public ArrayList<Double> averageOfLevels(TreeNode rootNode) {
+        if (rootNode == null)
+            return null;
+
+        ArrayList<Double> result = new ArrayList<>();
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(rootNode);
+        int sum = 0, count = 0;
+        while (!q.isEmpty()) {
+
+            sum = 0;
+            count = 0;
+
+            Queue<TreeNode> tempQ = new LinkedList<>();
+            while (!q.isEmpty()) {
+                TreeNode temp = q.poll();
+
+                sum += temp.data;
+                count++;
+
+                if (temp.left != null)
+                    tempQ.offer(temp.left);
+                if (temp.right != null)
+                    tempQ.offer(temp.right);
+            }
+            q = tempQ;
+            result.add(sum * 1.0 / count);
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         BinaryTree bTree = new BinaryTree();
@@ -271,11 +468,22 @@ public class BinaryTree {
         System.out.println("Inorder Traversal Iterative : ");
         bTree.iterativeInorderTraversal();
         System.out.println();
+        System.out.println("Postorder Traversal Iterative : ");
+        bTree.iterativePostOrderTraversal();
+        System.out.println();
         System.out.println("Lever Order Traversal Iterative : ");
         int max = bTree.levelOrderTraversal();
+        System.out.println();
+        System.out.println(bTree.root.data);
+        ArrayList<Double> avg = bTree.averageOfLevels(bTree.root);
+        avg.forEach(val -> System.out.print(val+" "));
+        System.out.println();
         System.out.println("\nMax element in tree(Iterative) : " + max);
         System.out.println("Max element in Tree : " + bTree.getMax(bTree.root));
+        System.out.println("Max depth of tree : " + bTree.maxDepth(bTree.root));
 
+        TreeNode node = bTree.lowestCommonAncestor(bTree.root, 4, 6);
+        System.out.println("Lowest common Ancestor of 4 and 6 : " + node.data);
         System.out.println("Is 6 available? : " + bTree.isAvailable(bTree.root, 6));
         System.out.println("Is 8 available? : " + bTree.isAvailable(bTree.root, 8));
         System.out.println();
@@ -290,5 +498,30 @@ public class BinaryTree {
         int sum = bTree.levelOrderTraversalReverse(bTree.root);
         System.out.println("\nSum of the tree : " + sum);
 
+        System.out.println();
+        System.out.println("No. of Leaf Nodes : " + bTree.numberOFLeaves(bTree.root));
+        System.out.println();
+
+        bTree.deleteNode(bTree.root, 2);
+        bTree.levelOrderTraversalReverse(bTree.root);
+        System.out.println();
+
+        bTree.deleteNode(bTree.root, 1);
+        bTree.levelOrderTraversalReverse(bTree.root);
+        System.out.println();
+        bTree.inorderTraversal(bTree.root);
+        System.out.println();
+        System.out.println("No. of Leaf Nodes : " + bTree.numberOFLeaves(bTree.root));
+        bTree.countNodeCategory(bTree.root);
+        System.out.println("Full Node : " + bTree.fullNode);
+        System.out.println("Half Node : " + bTree.halfNode);
+        System.out.println("Leaf Node : " + bTree.leafNode);
+
+        System.out.println();
+        bTree.levelOrderTraversal();
+        System.out.println();
+
     }
+
+
 }

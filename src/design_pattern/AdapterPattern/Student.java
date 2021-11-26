@@ -1,5 +1,6 @@
 package design_pattern.AdapterPattern;
 
+// Student POJO
 public class Student {
 
     private String name;

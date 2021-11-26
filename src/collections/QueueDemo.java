@@ -13,6 +13,7 @@ public class QueueDemo {
         for (int i = 10; i > 0; i--) {
             pQueue.add(i);
         }
+
         //Priority Queue : It sorts the elements of Queue
         // (front) 10 9 8 7 6 5 4 3 2 1 (rear)
         // but in pQueue = (front) 1, 2, 5, 4, 3, 9, 6, 10, 7, 8 (rear) // I don't know why

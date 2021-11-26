@@ -45,7 +45,6 @@ public class InfixToPostfix {
     // let's start
     // we can use Stack build in class but we gonna create our own now.
 
-    static Stack stack = new Stack();
 
     public static void main(String[] args) {
 
@@ -55,10 +54,14 @@ public class InfixToPostfix {
         infix = sc.nextLine();
 
         System.out.println("Postfix expression : " + toPostfix(infix));
+        String prefixReverse = toPostfix(new StringBuilder(infix).reverse().toString());
+        String prefix = new StringBuilder(prefixReverse).reverse().toString();
+        System.out.println("Prefix expression : "+prefix);
     }
 
     private static String toPostfix(String infix) {
         StringBuilder postfix = new StringBuilder();
+        Stack stack = new Stack();
         char symbol;
         for (int i = 0; i < infix.length(); i++) {
             symbol = infix.charAt(i);

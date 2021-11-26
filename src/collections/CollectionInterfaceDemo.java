@@ -30,10 +30,9 @@ public class CollectionInterfaceDemo {
         }
 
         // we can use iterator with collection
-        Iterator iterator = collections.iterator();
 
-        while (iterator.hasNext()){
-            System.out.println(iterator.next());
+        for (Object collection : collections) {
+            System.out.println(collection);
         }
     }
 }

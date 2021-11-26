@@ -85,7 +85,7 @@ public class NumberOfPair {
         int[] arr = {1, 7, 5, 9, 2, 12, 3};
         int n = arr.length;
         // k is difference of pair.
-        int k = 8;
+        int k = 2;
 
         long timeInMillisSecond1 = TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis());
         System.out.println("Number of difference : " + numberOfDifference(arr, n, k));

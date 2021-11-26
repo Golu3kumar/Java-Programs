@@ -1,5 +1,6 @@
 package design_pattern.AdapterPattern;
 
+// Employee POJO
 public class Employee {
 
     private int empId;

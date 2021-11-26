@@ -8,10 +8,11 @@ public class HowTwoSumArrayProblem {
     public static int[] howSum(int[] arr, int targetSum) {
         Map<Integer, Integer> memory = new Hashtable<>();
         for (int i = 0; i < arr.length; i++) {
-            if (!memory.containsKey(targetSum - arr[i])) {
+            int temp = targetSum - arr[i];
+            if (!memory.containsKey(temp)) {
                 memory.put(arr[i], i);
             } else {
-                return new int[]{memory.get(targetSum - arr[i]), i};
+                return new int[]{memory.get(temp), i};
             }
         }
         return null;

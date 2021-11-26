@@ -1,4 +1,3 @@
-import java.time.Clock;
 
 public class ThreadOptimization {
     public static void main(String[] args) throws InterruptedException {

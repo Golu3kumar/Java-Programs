@@ -57,7 +57,7 @@ public class SubArrayWithGivenSum {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> list = SubArrayWithGivenSum.subArraySum(new int[]{4,3,5,6},4,2);
+        ArrayList<Integer> list = SubArrayWithGivenSum.subArraySum(new int[]{4,3,5,6},4,14);
 
         for (int a:list) {
             System.out.println(a+" ");

@@ -152,8 +152,8 @@ public class SinglyLinkedList<T> {
         return false;
     }
 
-    public Node<T> findMiddleNode() {
-        Node<T> slowPointer = head, fastPointer = head;
+    public Node<T> findMiddleNode(Node<T> headNode) {
+        Node<T> slowPointer = headNode, fastPointer = headNode;
         while (fastPointer != null && fastPointer.next != null) {
             slowPointer = slowPointer.next;
             fastPointer = fastPointer.next.next;
@@ -292,7 +292,7 @@ public class SinglyLinkedList<T> {
         sl1.addNodeAtPosition(2, 20);
 
         sl1.printNode();
-        System.out.println("Middle node of linked list : " + sl1.findMiddleNode().data); // 10
+        System.out.println("Middle node of linked list : " + sl1.findMiddleNode(sl1.head).data); // 10
 
         System.out.println("note at pos 3 from last : " + sl1.getNodeFromLastAtPosition(3).data);//
 
